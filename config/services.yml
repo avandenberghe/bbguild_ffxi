@@ -1,0 +1,11 @@
+services:
+    avathar.bbguild_ffxi.installer:
+        class: avathar\bbguild_ffxi\game\ffxi_installer
+
+    avathar.bbguild_ffxi.provider:
+        class: avathar\bbguild_ffxi\game\ffxi_provider
+        arguments:
+            - '@avathar.bbguild_ffxi.installer'
+            - '@ext.manager'
+        tags:
+            - { name: bbguild.game_provider }
