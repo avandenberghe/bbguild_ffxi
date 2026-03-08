@@ -1,6 +1,11 @@
 services:
     avathar.bbguild_ffxi.installer:
         class: avathar\bbguild_ffxi\game\ffxi_installer
+        arguments:
+            - '@dbal.conn'
+            - '@cache'
+            - '@config'
+            - '@user'
 
     avathar.bbguild_ffxi.provider:
         class: avathar\bbguild_ffxi\game\ffxi_provider
